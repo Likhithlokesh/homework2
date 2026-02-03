@@ -1,41 +1,45 @@
-class Teacher{
-    String name1 = "kkk";
-    String name2 ="mmk";
-    void teach1(){
-        System.out.println("teacher name:"+name1);
-
-    }
-    void teach2(){
-        System.out.println("teacher name:"+name2);
-    }
-
-
-}
-class Mathteacher extends Teacher{
-  void solveEquation(){
-    System.out.println("i am math teacher");
-
-  }
-}
-class Scienceteacher extends Teacher{
-    void cunductExperiment(){
-        System.out.println("i am science taecher");
-
-    }
-
-}
-
-
-
-public class Code8 {
+class Library{
+    private String title;
+    private boolean isAvailable;
     
+    public String gettitle(){
+        return title;
+    }
+    public boolean isAvailable(){
+        return isAvailable;
+    }
+    public void settitle(String title){
+         this.title=title;
+         
+    }
+    public void setisAvailbale(boolean isAvailbale){
+        this.isAvailable=true;
+    }
+    void borrowBook(String title) {
+        if (isAvailable) {
+            isAvailable = false;
+            System.out.println("You borrowed the book: " + title);
+        } else {
+            System.out.println("Sorry! The book is already borrowed.");
+        }
+    }
+
+    void returnBook(String title) {
+        if (!isAvailable) {
+            isAvailable = true;
+            System.out.println("You returned the book: " + title);
+        } else {
+            System.out.println("This book was not borrowed.");
+        }
+    }
+}
+public class Code8{
     public static void main(String[] args) {
-        Mathteacher mt = new Mathteacher();
-        Scienceteacher st = new Scienceteacher();
-        mt.teach1();
-        mt.solveEquation();
-        st.teach2();
-        st.cunductExperiment();
+        Library b1 = new Library();
+        b1.settitle("java");
         
+        b1.borrowBook("java"); 
+        b1.returnBook("java");
+        b1.borrowBook("java"); 
     }
 }

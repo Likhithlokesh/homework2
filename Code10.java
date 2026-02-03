@@ -1,25 +1,32 @@
-class Appliance {
-    int powerRating;
+class Voter{
+    private int age;
 
-    void turnOn() {
-        System.out.println("Appliance is turned ON with powerRating:"+powerRating);
+    public int getage(){
+    return age;
+    }
+    public void  setage(int age){
+        this.age=age;
+    }
+    void eligible(){
+        if(age>=18){
+            System.out.println("eligible to vote");
+        }else{
+            if(age<0){
+            System.out.println("not eligible to vote and not a valid age");
+            }else{
+             System.out.println("not eligible to vote ");   
+            }
     }
 }
-
-class WashingMachine extends Appliance {
-
-    void washClothes() {
-        System.out.println("Washing clothes...");
-    }
 }
+
+
 
 public class Code10 {
     public static void main(String[] args) {
-
-        WashingMachine wm = new WashingMachine();
-
-        wm.powerRating = 1500;   
-        wm.turnOn();             
-        wm.washClothes();        
+        Voter vt = new Voter();
+        vt.setage(18);
+        vt.eligible();
     }
+    
 }
