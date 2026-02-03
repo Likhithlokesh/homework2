@@ -1,24 +1,46 @@
-public class Student{
-    String name;
-    int age;
-    double marks;
-     Student(String name, int age, double marks) {
-        this.name = name;
-        this.age = age;
-        this.marks = marks;
+class Bank{
+    private double balance;
+
+
+    public double getbalance(){
+        return balance;
     }
-    void run(){
-        System.out.println(name + " " + age + " " + marks);
+
+    public void setbalance(double balance){
+        this.balance=balance;
+    }
+
+
+
+    void deposit(double a){
+        balance = balance +a;
+        System.out.println("deposited: "+a);
+
+    }
+
+    void withdraw(double b){
+        balance=balance-b;
+        System.out.println("withdraw: "+b);
+
+    }
+
+    void balance(){
+        
+        System.out.println("balance is "+balance );
     }
 }
 
+
 public class Code1 {
     public static void main(String[] args) {
-        Student st = new Student("yashas",21,70.00);
-        st.run();
+        Bank bn = new Bank();
+        bn.deposit(100);
+        bn.withdraw(50);
+        bn.balance();
+
+        
+
 
     }
-    
-} {
     
 }

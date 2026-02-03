@@ -1,31 +1,32 @@
+class Voter{
+    private int age;
 
-class College{
-    String collegename;
-    String location;
-    College(String collegename,String location){
-        this.collegename=collegename;
-        this.location=location;
+    public int getage(){
+    return age;
     }
-    void mitm(){
-      System.out.println("college  "+collegename+" is in "+location);
+    public void  setage(int age){
+        this.age=age;
     }
-    void bmc(){
-      System.out.println("college   "+collegename+" is in "+location);
-    }
-    void jce(){
-      System.out.println("college   "+collegename+" is in "+location);
+    void eligible(){
+        if(age>=18){
+            System.out.println("eligible to vote");
+        }else{
+            if(age<0){
+            System.out.println("not eligible to vote and not a valid age");
+            }else{
+             System.out.println("not eligible to vote ");   
+            }
     }
 }
+}
+
+
 
 public class Code10 {
     public static void main(String[] args) {
-        College c1 = new College("mitm","mysore");
-        College c2 = new College("bmc","banglore");
-        College c3 = new College("jce","mysore");
-        c1.mitm();
-        c2.bmc();
-        c3.jce();
-
+        Voter vt = new Voter();
+        vt.setage(18);
+        vt.eligible();
     }
     
 }

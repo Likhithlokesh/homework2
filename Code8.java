@@ -1,32 +1,45 @@
-class ATM{
-    double a;
-    double b;
-    ATM(double a,double b){
-        this.a=a;
-        this.b=b;
-        
+class Library{
+    private String title;
+    private boolean isAvailable;
+    
+    public String gettitle(){
+        return title;
     }
-    void deposit(){
-    System.out.println("deposited : " +a);
+    public boolean isAvailable(){
+        return isAvailable;
     }
-    void withdraw() {
-        System.out.println("withdraw : "+b);
+    public void settitle(String title){
+         this.title=title;
+         
+    }
+    public void setisAvailbale(boolean isAvailbale){
+        this.isAvailable=true;
+    }
+    void borrowBook(String title) {
+        if (isAvailable) {
+            isAvailable = false;
+            System.out.println("You borrowed the book: " + title);
+        } else {
+            System.out.println("Sorry! The book is already borrowed.");
+        }
+    }
 
-    }
-    void balance(){
-        double c = a - b;
-        System.out.println("balance is : "+c);
-
+    void returnBook(String title) {
+        if (!isAvailable) {
+            isAvailable = true;
+            System.out.println("You returned the book: " + title);
+        } else {
+            System.out.println("This book was not borrowed.");
+        }
     }
 }
-
-
-public class Code8 {
+public class Code8{
     public static void main(String[] args) {
-        ATM am = new ATM(1000,900);
-        am.deposit();
-        am.withdraw();
-        am.balance();
+        Library b1 = new Library();
+        b1.settitle("java");
+        
+        b1.borrowBook("java"); 
+        b1.returnBook("java");
+        b1.borrowBook("java"); 
     }
-    
 }

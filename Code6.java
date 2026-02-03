@@ -1,19 +1,27 @@
-class Circle{
-    double r;
-    Circle(double r){
-        this.r=r;
+class Mobile{
+    private int batteryLevel;
+    public int getbatteryLevel(){
+        return batteryLevel;
     }
-    void radius(){
-       double area = 3.14*r*r;
-       System.out.println("area is "+area);
+    public void setbatteryLevel(int batteryLevel){
+        this.batteryLevel=batteryLevel;
     }
-}
+    void battery(int batteryLevel){
+        if(this.batteryLevel>=batteryLevel){
+            System.out.println("battery is getting charged");
+        }else{
+            System.out.println("battery is full");
+        }
+    }
 
+}
 
 
 public class Code6 {
     public static void main(String[] args) {
-        Circle cr = new Circle(8);
-        cr.radius();
+        Mobile mb = new Mobile();
+        mb.setbatteryLevel(100);
+        mb.battery(99);
     }
+    
 }

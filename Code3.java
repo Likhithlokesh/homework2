@@ -1,29 +1,24 @@
-class Car{
-    String brand;
-    int model;
-    double price;
-    Car(String brand,int model,double price){
-        this.brand=brand;
-        this.model=model;
-        this.price=price;
+class Employee{
+    private int salary;
+    public int getsalary(){
+        return salary;
+    }
+    public void setsalary(int salary){
+        this.salary=salary;
+        if(salary>0){
+            System.out.println("salary of the employee is : "+salary);
+        }else{
+            System.out.println("salary cannot be negetive");
+        }
 
     }
-void run(){
-    System.out.println(brand);
-    System.out.println(model);
-    System.out.println(price); 
-
 }
 
-
-}
 
 
 public class Code3 {
     public static void main(String[] args) {
-        Car cr = new Car("Toyota",2010,1000000);
-        cr.run();
-
+        Employee em = new Employee();
+        em.setsalary(20000);
     }
-    
 }
