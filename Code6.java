@@ -1,27 +1,38 @@
-class Mobile{
-    private int batteryLevel;
-    public int getbatteryLevel(){
-        return batteryLevel;
+class Bank{
+    int a =10000;
+    void branch(){
+        System.out.println("SBI bank of mysore");
     }
-    public void setbatteryLevel(int batteryLevel){
-        this.batteryLevel=batteryLevel;
+
+}
+class Savingsaccount extends Bank{
+    
+    void addintrest(){
+        double b = (a/150)*100;
+        System.out.println("balance after intrest:"+b);
+
     }
-    void battery(int batteryLevel){
-        if(this.batteryLevel>=batteryLevel){
-            System.out.println("battery is getting charged");
-        }else{
-            System.out.println("battery is full");
-        }
+
+}
+class currenttaccount extends Bank{ 
+    void deductcharges(){
+        double d = (a/150)*100;
+        System.out.println("balance after charges for maintainance:"+d);
+
     }
+
 
 }
 
 
 public class Code6 {
     public static void main(String[] args) {
-        Mobile mb = new Mobile();
-        mb.setbatteryLevel(100);
-        mb.battery(99);
+        Savingsaccount sa  =  new Savingsaccount();
+        currenttaccount ca = new currenttaccount();
+        sa.branch();;
+        sa.addintrest();
+        ca.deductcharges();
+
     }
     
 }

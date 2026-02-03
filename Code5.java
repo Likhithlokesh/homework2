@@ -1,28 +1,34 @@
-class Car{
-    private int speed;;
-    public int getspeed(){
-        return speed;
+import javax.sql.rowset.spi.SyncResolver;
+
+class Employee{
+String name = "yashas";
+double salary = 100000;
+void grandparent(){
+    System.out.println("name:"+name);
+    System.out.println("salary:"+salary);
+}
+}
+class Developer extends Employee {
+    void code(){
+        super.grandparent();
+        System.out.println("i am the code developer");
+
     }
-    public void setspeed(int speed){
-        this.speed=speed;
-    }
-    void speeding(int speed){
-        if(this.speed>=speed){
-            System.out.println("maintain this speed");
-        }else{
-            System.out.println("you are exceeding speed");
-        }
+
+}
+class Manager extends Developer{
+    void manageteam(){
+        super.code();
+        System.out.println("i am the manager");
+
     }
 
 }
 
-
 public class Code5 {
     public static void main(String[] args) {
-        Car cr = new Car();
-        cr.setspeed(200);
-
-        cr.speeding(210);
+        Manager mg = new Manager();
+        mg.manageteam();
     }
     
 }

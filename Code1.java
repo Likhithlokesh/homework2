@@ -1,46 +1,33 @@
-class Bank{
-    private double balance;
-
-
-    public double getbalance(){
-        return balance;
+class Person{
+    String name="yashas";
+    int age = 21;
+    void parent(){
+    System.out.println("name:"+name);
+    System.out.println("age:"+age);
     }
 
-    public void setbalance(double balance){
-        this.balance=balance;
+}
+
+class Student extends Person {
+    int rollNumber = 52;
+    double marks = 70;
+    void child(){
+        System.out.println("Rollnumber:"+rollNumber);
+        System.out.println("marks:"+marks);
     }
 
-
-
-    void deposit(double a){
-        balance = balance +a;
-        System.out.println("deposited: "+a);
-
-    }
-
-    void withdraw(double b){
-        balance=balance-b;
-        System.out.println("withdraw: "+b);
-
-    }
-
-    void balance(){
-        
-        System.out.println("balance is "+balance );
-    }
+    
 }
 
 
+
+
 public class Code1 {
-    public static void main(String[] args) {
-        Bank bn = new Bank();
-        bn.deposit(100);
-        bn.withdraw(50);
-        bn.balance();
-
-        
-
-
-    }
     
+public static void main(String[] args) {
+    
+    Student st = new Student();
+    st.child();
+    st.parent();
+}
 }

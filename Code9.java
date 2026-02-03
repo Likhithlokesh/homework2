@@ -1,28 +1,32 @@
-class Temperature{
-    private double celsius;
-    public double getcelsius(){
-        return celsius;
-    }
-    public void setcelsius(double celsius){
-        this.celsius=celsius;
-        
-    }
-    void Safety(){
-        if(celsius >= -273.15){
-            System.out.println("temperature is okay");
+class Account{
+int accnumber= 12345678;
+void acc(){
+    System.out.println("account number:"+accnumber);
+}
+}
+class Loanaccount extends Account{
+    double loan = 200000;
+    void EMI(int month){
+        super.acc();
+        System.out.println("loan taken:"+loan);
+        if(month==12){
+        double emi = loan/12;
+        System.out.println("emi should be payed for month:"+emi);
+        }else if(month == 6){
+            double emi = loan/6;
+            System.out.println("emi should be payed for month:"+emi);
         }else{
-            System.out.println("temperature is below the absolute zero");
+            System.out.println("emi is rejected");
         }
     }
-
 
 }
 
 public class Code9 {
     public static void main(String[] args) {
-        Temperature tp =new Temperature();
-        tp.setcelsius(12);
-        tp.Safety();
+        Loanaccount la = new Loanaccount();
+        la.EMI(12);
+
     }
     
 }
